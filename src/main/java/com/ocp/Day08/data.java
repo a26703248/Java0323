@@ -23,6 +23,7 @@ public class data {
             }else{
                Equal(JOptionPane.showInputDialog("輸入帳號"),JOptionPane.showInputDialog("輸入密碼"));
             }
+            System.exit(0);
         }
     }
     
@@ -42,15 +43,15 @@ public class data {
     
     
     
-    public String getdataID(){
+    private String getdataID(){
         return dataID;
     }
-    
+   
     private void setdataID(String ID){
         this.dataID=ID;
     }
     
-    public String getdataPassword(){
+    private String getdataPassword(){
         return dataID;
     }
     

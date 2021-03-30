@@ -1,12 +1,13 @@
 package com.lab;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AbGuessNumber {
 
     public static void main(String[] args) {
-        int[] ansArray = {5, 8, 4, 1};
-        int[] user = new int[4];
+        int[] ansArray = util.getAnswerArray();
+        System.out.println(Arrays.toString(ansArray));
         do {
             Scanner sc = new Scanner(System.in);
             System.out.print("請輸入不重複的四個數字: ");

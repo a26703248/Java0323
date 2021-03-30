@@ -13,7 +13,7 @@ public class util {
             boolean exist=isExist(ans, n);
             if(!exist){
                 ans[i]=n;
-                i++;//重要
+                i++;//重要，讓陣列重複時不需要退回再重新指定
             }
         }
         return ans;

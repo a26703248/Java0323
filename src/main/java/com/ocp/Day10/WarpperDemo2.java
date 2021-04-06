@@ -10,6 +10,6 @@ public class WarpperDemo2 {
         Integer a2=100;//相當於java編譯器幫你產生new Integer(100) auto-boxing
         Integer b2=200;
         System.out.println(a2+b2);//相當於java編譯器幫你調用intValue()方法 auto-Unboxing
-        
+        int c=new Integer(100);
     }
 }

@@ -12,7 +12,7 @@ public class Java8Study4 {
         int max=IntStream.of(scores).max().getAsInt();
         int min=IntStream.of(scores).min().getAsInt();
         System.out.printf("sum:%d, avg:%.2f, max:%d, min:%d\n",sum,avg,max,min);
-        //java 8 part II(統計)
+        //java 8 part II(統計)SummaryStatistics
         IntSummaryStatistics stat=IntStream.of(scores).summaryStatistics();//統計物件
         System.out.printf("sum:%d, avg:%.2f, max:%d, min:%d\n",
                 stat.getSum(),stat.getAverage(),stat.getMax(),stat.getMin());

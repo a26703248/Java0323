@@ -10,12 +10,12 @@ public class Person_Main4 {
         Person[][] person={
             {
                 new Person("Amy",17, 170,60.5),
-            new Person("Mary",18, 160,50.5)
+                new Person("Mary",18, 160,50.5)
             },
             {
                 new Person("John",19, 155,42.5),
-            new Person("Helen",20, 185,75.5),
-            new Person("Tom",21, 190,120.5),
+                new Person("Helen",20, 185,75.5),
+                new Person("Tom",21, 190,120.5),
         },};
         //計算BMI的平均,最大與最小值多少?
         

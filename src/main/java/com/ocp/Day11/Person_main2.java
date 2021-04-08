@@ -1,5 +1,6 @@
 package com.ocp.Day11;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
@@ -17,9 +18,13 @@ public class Person_main2 {
         // 參考 api: https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html
         // T 代表 傳入參數型別, 在這邊指的就是 Person 物件也就是 p
         // R 代表 回傳資料型別, 在這邊指的就是 Double 也就是 bmi 的計算結果
-        Function<Person,Double> getBMI=p->p.getHight()/Math.pow(p.getWeight()/100, 2);
+        Function<Person,Double> getBMI=p->p.getWeight()/Math.pow(p.getHight()/100, 2);
         //正常BMI的過濾器Predicate<Person>
-        Predicate<Person> normalBmi = p -> getBMI.apply(p) > 18 && getBMI.apply(p) <= 23;
-        Stream.of(persons).filter(normalBmi).forEach(p->System.out.println(p.getName()));
+        Predicate<Person> normalBmi = p -> getBMI.apply(p) > 18 && getBMI.apply(p) <= 23;//判斷用
+        //印出人名
+        Consumer<Person> printName=p->System.out.println(p.getName());
+        //印出正常BMI的人
+        Stream.of(persons).filter(normalBmi).forEach(printName);
+        
     }
 }

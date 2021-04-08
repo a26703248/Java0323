@@ -21,8 +21,6 @@ public class Person_Main3 {
                 .mapToDouble(getBMI::apply)
                 .summaryStatistics();
         System.out.printf("平均:%.2f, 最大:%.2f, 最小:%.2f\n",
-                bmi.getAverage(),
-                bmi.getMax(),
-                bmi.getMin());
+                bmi.getAverage(),bmi.getMax(),bmi.getMin());
     }
 }

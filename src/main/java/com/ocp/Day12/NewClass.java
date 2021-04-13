@@ -2,9 +2,12 @@ package com.ocp.Day12;
 
 import java.util.stream.Stream;
 
-public class Company {
+public class NewClass {
+    
+}
+class EmployeeApi {
     private static Employee[] employees;
-    static{
+    static {
         Employee e1 = new Employee();
         e1.setSalary(3_0000);
         Employee e2 = new Employee();
@@ -23,33 +26,39 @@ public class Company {
         d1.setStockoption(300_0000);
         employees = new Employee[]{e1, e2, e3, m1, m2, d1};
     }
-    //取得所有員工資料
-    public static Employee[] getemployee(){
+    
+    // 取得所有員工資料
+    public static Employee[] getEmployees() {
         return employees;
     }
-    //取得總薪資
-    public static int getTotalSalary(){
+    
+    // 取得總薪資
+    public static int getTotalSalary() {
         return Stream.of(employees)
                 .mapToInt(Employee::getSalary)
                 .sum();
     }
-    //取得平均薪資
-    public static double getSalaryOfAvg(){
+    
+    // 取得平均薪資
+    public static double getSalaryOfAvg() {
         return Stream.of(employees)
                 .mapToInt(Employee::getSalary)
                 .average()
                 .getAsDouble();
     }
-    //取得總預算
-    public static double getTotalBudget(){
-        return Stream.of(employees)
-                .filter(e->e instanceof Manager)
-                .map(e -> (Manager)e)
-                .mapToInt(e->e.getBudget())
+    
+    // 取得總預算
+    public static int getTotalBudget() {
+        return Stream.of(employees) // Employee 串流
+                .filter(e -> e instanceof Manager) // Employee 串流
+                .map(e -> (Manager)e) // Manager 串流
+                .mapToInt(e -> e.getBudget()) // Manager 串流
                 .sum();
     }
-    //取得員工總數
-    public static int  getAmount(){
+    
+    // 員工總數
+    public static int getAmount() {
         return employees.length;
     }
+    
 }

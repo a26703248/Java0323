@@ -53,7 +53,7 @@ public class Company {
                 .sum();
     }
     //取得員工總數
-    public static int  amount(){
+    public static int  getAmount(){
         return employees.length;
     }
 }

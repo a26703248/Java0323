@@ -1,7 +1,6 @@
 package com.ocp.Day12;
 
 import java.util.IntSummaryStatistics;
-import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class Extends {
@@ -87,6 +86,7 @@ public class Extends {
         int manargerSum=Stream.of(employees)
                 .filter(e->e instanceof Manager)
                 .mapToInt(Employee::getSalary)
+                .peek(System.out::println)
                 .sum();
         System.out.printf("Manager的總薪資: %,d\n",manargerSum);
     }

@@ -1,5 +1,10 @@
 package com.ocp.Day16;
-public class Fighter extends Airplane implements Weapon{
+public class Fighter extends Airplane implements Weapon,Oil{
+
+    @Override
+    public int spmd() {
+        return 10_000;
+    }
 
     @Override
     public int speed() {

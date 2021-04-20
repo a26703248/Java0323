@@ -1,5 +1,10 @@
 package com.ocp.Day16;
-public class Tank extends Car implements Weapon{
+public class Tank extends Car implements Weapon,Oil{
+
+    @Override
+    public int spmd() {
+        return 300;
+    }
 
     @Override
     public void move() {

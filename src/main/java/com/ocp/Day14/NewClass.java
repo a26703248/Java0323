@@ -1,7 +1,7 @@
 package com.ocp.Day14;
 public class NewClass {
     public static void main(String[] args) {
-        int i,j,k;
+        /*int i,j,k;
         int n = 5;//輸入要的層
         for(i = 1 ; i<=n ; i++)//層數的for迴圈
         {
@@ -21,6 +21,7 @@ public class NewClass {
                 }
             }
             System.out.println();
-        }
+        }*/
+        
     }
 }

@@ -21,5 +21,15 @@ public class School {
                 .summaryStatistics();
         System.out.println(is1.getSum());
         System.out.println(is1.getAverage());
+        
+        Arrays.stream(DataCenter.getPeopl())
+                .filter(i -> i instanceof Student)
+                .map(x->((Student)x))
+                .filter(x -> x.getScore()<60)
+                .peek(x->System.out.printf("學生:%s,分數:%d,老師:%s",
+                        x.getName(),x.getScore(),x.getTeacher().getName()))
+                .mapToInt(x-> x.getScore())
+                .average()
+                .getAsDouble();
     }
 }

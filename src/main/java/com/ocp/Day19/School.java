@@ -2,6 +2,8 @@ package com.ocp.Day19;
 
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class School {
     public static void main(String[] args) {
@@ -22,14 +24,18 @@ public class School {
         System.out.println(is1.getSum());
         System.out.println(is1.getAverage());
         
-        Arrays.stream(DataCenter.getPeopl())
+        Consumer<Student> c1=s ->System.out.printf("學生:%s,分數:%d,老師:%s",s.getName(),
+                s.getScore(),s.getTeacher().getName());
+        Predicate<Student> p1=x-> x.getScore()<60;
+        double avg=Arrays.stream(DataCenter.getPeopl())
                 .filter(i -> i instanceof Student)
                 .map(x->((Student)x))
-                .filter(x -> x.getScore()<60)
-                .peek(x->System.out.printf("學生:%s,分數:%d,老師:%s",
-                        x.getName(),x.getScore(),x.getTeacher().getName()))
-                .mapToInt(x-> x.getScore())
+                .filter(p1)
+                .peek(c1)
+                .mapToInt(Student::getScore)
                 .average()
                 .getAsDouble();
+        System.out.println("不及格分數:"+avg);
+        
     }
 }

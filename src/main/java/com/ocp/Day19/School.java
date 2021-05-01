@@ -3,6 +3,7 @@ package com.ocp.Day19;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class School {
@@ -36,6 +37,5 @@ public class School {
                 .average()
                 .getAsDouble();
         System.out.println("不及格分數:"+avg);
-        
     }
 }

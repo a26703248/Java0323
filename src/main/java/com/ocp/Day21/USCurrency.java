@@ -17,3 +17,11 @@ public enum USCurrency {
         return value;
     }
 }
+/*singleTon(單一實體)結構
+
+
+
+
+
+
+*/

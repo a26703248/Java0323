@@ -6,5 +6,6 @@ public class OuterDemo {
         
         Outer.Sinner sin=new Outer.Sinner();
         sin.print();
+        
     }
 }

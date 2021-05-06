@@ -14,16 +14,18 @@ public class SetDemo1 {
         //走訪每一個元素
         Iterator iter=subjects.iterator();
         while (iter.hasNext()) {
-            System.out.println(iter.next());
+            Object next=iter.next();
+            //System.out.println(iter.next());
+            if(next==null){
+                iter.remove();
+                continue;
+            }
+            if(next instanceof Integer){
+                iter.remove();
+            }
             
         }
-        
-        
-        
-        
-        
-        
-        
+        System.out.println(subjects);
     }
 }
 /*

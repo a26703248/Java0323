@@ -2,7 +2,7 @@ package com.ocp.Day23;
 
 import java.util.*;
 
-public class SetDemo4 {
+public class SetDemo4{
     public static void main(String[] args) {
         //國英數總分0~100之間
         Set<Integer> scores=new LinkedHashSet<>();

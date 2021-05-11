@@ -22,11 +22,5 @@ public class ArraysListDemo {
             String Previous = iter.previous();
             System.out.printf("%d : %s\n",prevId,Previous);
         }
-        
-        
-        
-        
-        
-        
     }
 }

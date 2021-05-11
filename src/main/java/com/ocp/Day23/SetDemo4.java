@@ -13,14 +13,18 @@ public class SetDemo4{
         scores.add(-150);
         scores.add(80);
         //請用 Java1.8計算總分
-        IntSummaryStatistics s=scores.stream()
+        /*IntSummaryStatistics s=scores.stream()
                 .filter(score::isValid)
                 .mapToInt(Integer::intValue)
-                .summaryStatistics();
-        System.out.println(s.getSum());
-        System.out.println(s.getMax());
+                .summaryStatistics();*/
+        int s=scores.stream()
+                .filter(score::isValid)
+                .mapToInt(Integer::intValue)
+                .sum();
+        System.out.println(s);
+        /*System.out.println(s.getMax());
         System.out.println(s.getMin());
-        System.out.println(s.getAverage());
+        System.out.println(s.getAverage());*/
         
         
         

@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws Exception{
         while (play) {
             menu();
-            Runtime.getRuntime().exec("cis");
+            Runtime.getRuntime().exec("cls");
         }
     }
 

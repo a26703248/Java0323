@@ -4,19 +4,40 @@ import java.util.*;
 
 public class ServiceCenter {
     private Set<Food> catalog=new DataCenter().getCatalog();
+    //根據NO來查找Food
+    public Food getFoodbyNo(int no){
+        return catalog.stream()
+                .filter(f-> f.getNo()==no)
+                .findFirst()
+                .get();
+    }
+    
     //檢視catalog
     public void printCatalog(){
 
         System.out.println("訂單系統");
-        System.out.println("===============");
+        System.out.println("-------------------------------------------");
+        System.out.println("|no|　品名　　|尺寸| 價格|");
+        System.out.println("-------------------------------------------");
         for (Food food : catalog) {
-            System.out.printf("編號: %d,品名: %s,尺吋: %c,價格: %d\n"
+            System.out.printf("|%2d| %s |　%c|%5d|\n"
             ,food.getNo(),food.getName(),food.getSize(),food.getPrice());
         }
-        System.out.println("===============");
+        System.out.println("-------------------------------------------");
     }
     
-    
+    public void menu(){
+        System.out.println("系統項目");
+        System.out.println("--------------------");
+        System.out.println("1,檢視Catalog");
+        System.out.println("2,新增訂單餐點");
+        System.out.println("3,查詢訂單餐點");
+        System.out.println("4,取消訂單餐點");
+        System.out.println("5,刪除全部訂單");
+        System.out.println("6,結帳");
+        System.out.println("0,exit");
+        System.out.println("--------------------");
+    }
     
     
     

@@ -4,7 +4,6 @@ import java.util.*;
 
 public class DataCenter {
     public Set<Food> getCatalog(){
-        
         Set<Food>catalog=new LinkedHashSet<>();
         catalog.add(new Food(1,"牛肉拉麵", '大', 130));
         catalog.add(new Food(2,"牛肉拉麵", '小', 110));

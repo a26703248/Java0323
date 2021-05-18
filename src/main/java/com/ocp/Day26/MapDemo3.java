@@ -2,7 +2,7 @@ package com.ocp.Day26;
 
 import java.util.*;
 
-public class MapDemo3 {
+public class MapDemo3{
     public static void main(String[] args) {
         Map<Integer, String> student=new TreeMap<>();
         student.put(3, "Mary");

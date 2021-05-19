@@ -2,46 +2,46 @@
 package com.lab.pork;
 
 public class Pork {
-    private String 店家;
-    private String 地點;
-    private String 商品;
-    private String 類型;
+    private String market_name;
+    private String addr;
+    private String context;
+    private String type;
 
-    public String get店家() {
-        return 店家;
+    public String getMarket_name() {
+        return market_name;
     }
 
-    public void set店家(String 店家) {
-        this.店家 = 店家;
+    public void setMarket_name(String market_name) {
+        this.market_name = market_name;
     }
 
-    public String get地點() {
-        return 地點;
+    public String getAddr() {
+        return addr;
     }
 
-    public void set地點(String 地點) {
-        this.地點 = 地點;
+    public void setAddr(String addr) {
+        this.addr = addr;
     }
 
-    public String get商品() {
-        return 商品;
+    public String getContext() {
+        return context;
     }
 
-    public void set商品(String 商品) {
-        this.商品 = 商品;
+    public void setContext(String context) {
+        this.context = context;
     }
 
-    public String get類型() {
-        return 類型;
+    public String getType() {
+        return type;
     }
 
-    public void set類型(String 類型) {
-        this.類型 = 類型;
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
     public String toString() {
-        return "Pork{" + "\u5e97\u5bb6=" + 店家 + ", \u5730\u9ede=" + 地點 + ", \u5546\u54c1=" + 商品 + ", \u985e\u578b=" + 類型 + '}';
+        return "Pork{" + "店家=" + market_name + ",地點=" + addr + ",商品=" + context + ",店家類型=" + type + '}';
     }
-    
+
 }

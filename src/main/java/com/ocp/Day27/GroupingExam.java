@@ -15,7 +15,7 @@ public class GroupingExam {
         //請問及格/不及格的人數分組
         //{true=3, false=2}
         Map<String, Set<String>> result=exams.stream()
-            .collect(Collectors.groupingBy(g->g.getScore()>=60 ? "及格":"不及格",
+                .collect(Collectors.groupingBy(g->g.getScore()>=60 ? "及格":"不及格",
             Collectors.mapping(Exam::getName, Collectors.toSet())));
         System.out.println(result);
         

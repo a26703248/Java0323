@@ -28,5 +28,36 @@ public class GroupingFruit {
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
                 .forEach(System.out::println);
         
+        //GroupingBY +Sum qty
+        //{蘋果=40, 柳丁=30, 香蕉=10, 木瓜=20, 西瓜=10}
+        Map<String, Integer> result2 = fruits.stream()
+            .collect(Collectors.groupingBy(Fruit::getName,
+                                            Collectors.summingInt(Fruit::getQty)));            
+        System.out.println(result2);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 }

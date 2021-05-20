@@ -28,27 +28,5 @@ public class GroupingFruit {
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
                 .forEach(System.out::println);
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
 }

@@ -17,7 +17,7 @@ public class GroupingFruit {
                  new Fruit("蘋果", 20, 9.99)
         );
         System.out.println(fruits);
-        //分組
+        //分組 by name 
         //蘋果=3, 香蕉=2, 柳丁=1, 西瓜=1, 木瓜=1
         Map<String, Long> result=fruits.stream()
                 .collect(Collectors.groupingBy(f->f.getName()
@@ -28,17 +28,33 @@ public class GroupingFruit {
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
                 .forEach(System.out::println);
         
-        //GroupingBY +Sum qty
+        //分組 by name GroupingBY +Sum qty
         //{蘋果=40, 柳丁=30, 香蕉=10, 木瓜=20, 西瓜=10}
         Map<String, Integer> result2 = fruits.stream()
             .collect(Collectors.groupingBy(Fruit::getName,
                                             Collectors.summingInt(Fruit::getQty)));            
         System.out.println(result2);
+        //分組 by price part I
+        System.out.println(
+            fruits.stream()
+              .collect(Collectors.groupingBy(Fruit::getPrice))
+        );
+        Map<Double, List<Fruit>> result3=fruits.stream()
+              .collect(Collectors.groupingBy(Fruit::getPrice));
+        System.out.println(result3);
         
-        
-        
-        
-        
+        //分組轉換 by price part II
+        System.out.println(
+            fruits.stream()
+              .collect(Collectors.groupingBy(Fruit::getPrice, 
+                                  Collectors.mapping(Fruit::getName,
+                                                      Collectors.toSet())))
+        );
+        Map<Double,Set<String>> result4=fruits.stream()
+              .collect(Collectors.groupingBy(Fruit::getPrice, 
+                                  Collectors.mapping(Fruit::getName,
+                                                      Collectors.toSet())));
+        System.out.println(result4);
         
         
         

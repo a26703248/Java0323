@@ -13,9 +13,5 @@ public class ExceptionDemo {
         }catch(Throwable e){
             System.out.println("錯誤內容: "+e);
         }
-        
-        
-        
-        
     }
 }

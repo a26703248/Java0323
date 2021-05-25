@@ -21,5 +21,4 @@ public class util {
         Pork[] pork=new Gson().fromJson(json,Pork[].class);
         return pork;
     }
-    
 }

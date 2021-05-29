@@ -8,14 +8,14 @@ class Walking implements Runnable {
     }
     
     private void Job() {
-        String tname = new Thread().currentThread().getName();
+        String tname = Thread.currentThread().getName();
         for (int i = 0; i <= 1000; i++) {
             System.out.printf("%s 走了 %d 步 \n",tname ,i);
         }
     }
 }
 
-public class thread {
+public class ThreadDemo {
     public static void main(String[] args) {
         Walking w1 = new Walking();
         Walking w2 = new Walking();

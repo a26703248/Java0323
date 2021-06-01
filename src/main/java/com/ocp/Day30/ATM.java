@@ -32,10 +32,10 @@ class Account {//銀行帳戶
 
 }
 
-class WithDraw implements Runnable {// 提款執行緒
+class WithDraw implements Runnable {// 提款執行緒(Runnable)
 
-    private Account account;
-    private int cash;
+    private Account account;// 帳號
+    private int cash;// 提款金額
 
     public WithDraw(Account account, int cash) {
         this.account = account;
@@ -53,5 +53,13 @@ class WithDraw implements Runnable {// 提款執行緒
 }
 
 public class ATM {
-
+    public static void main(String[] args) {
+        Account account = new Account(10000);
+        Thread t1 = new Thread(new WithDraw(account, 5000), "小明");
+        Thread t2 = new Thread(new WithDraw(account, 3000), "小華");
+        Thread t3 = new Thread(new WithDraw(account, 4000), "小英");
+        t1.start();
+        t2.start();
+        t3.start();
+    }
 }

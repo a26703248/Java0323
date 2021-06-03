@@ -1,4 +1,4 @@
-package com.ocp.cyclicbarrier;
+package com.ocp.Day32_cyclicbarrier;
 
 import java.util.concurrent.CyclicBarrier;
 

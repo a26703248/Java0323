@@ -10,7 +10,7 @@ class Account {//銀行帳戶
         this.balance = balance;
     }
 
-    public void withdraw(int cash) throws Exception {
+    public synchronized void withdraw(int cash) throws Exception {
         String name = Thread.currentThread().getName();
         System.out.printf("%s 準備提款...\n", name);
         //取得帳戶餘額

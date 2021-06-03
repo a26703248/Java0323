@@ -1,9 +1,10 @@
 package com.ocp.Day31_thread;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 class Ball {
-
-    private int max = 100;
-
+    private int max = 1000;
     public synchronized void get() {
         //code ....
         //synchronized (this) {
@@ -12,6 +13,7 @@ class Ball {
 
                 System.out.printf("%s 取到第 %d 顆球\n", name, max);
                 max--;
+                GetBall.map.put(name, GetBall.map.getOrDefault("name", 0)+1);
             }
         //}
         //code ....
@@ -19,27 +21,27 @@ class Ball {
 }
 
 class BallThread extends Thread {
-
     private Ball ball;
-
     public BallThread(Ball ball) {
         this.ball = ball;
     }
-
     @Override
     public void run() {
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i < 1000; i++) {
             ball.get();
         }
+        System.out.println(GetBall.map);
     }
 
 }
 
 public class GetBall {
-
+    static Map<String, Integer> map = new LinkedHashMap<>();
+    
     public static void main(String[] args) {
         Ball ball = new Ball();
-        new BallThread(ball).start();
-        new BallThread(ball).start();
+        for (int i = 1; i <= 5; i++) {
+            new BallThread(ball).start();
+        }
     }
 }
